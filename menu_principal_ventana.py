@@ -3,13 +3,14 @@ import os
 import json
 import inicio_ventana
 import configuracion
+import editar_perfil
 import generador_memes
 class VentanaMenu:
     def __init__(self, perfil_act):
         current_dir = os.path.abspath(__file__)
 
-        relative_path = "icons\\config.png"
-        relative_path_2 = "icons\\help.png"
+        relative_path = "icons/config.png"
+        relative_path_2 = "icons/help.png"
         config_img = os.path.join('./', relative_path)
         help_img = os.path.join('./', relative_path_2)
 
@@ -21,7 +22,7 @@ class VentanaMenu:
             if (perfil['nombre'] == perfil_act):
                 perfil_boton = [sg.Button(enable_events=True, key=perfil['nombre'], button_color='white', border_width=0, image_filename=perfil['imagen'])]
 
-
+        self.perf=perfil_act
 
         etiquetar_imagenes = [sg.Button('Etiquetar Imagenes', key= 'imagenes')]
         generar_meme = [sg.Button('Generar Meme', key= 'meme')]
@@ -45,8 +46,8 @@ class VentanaMenu:
         column4 = sg.Column(column4_layout, size=(82, 600), background_color="white")
 
         layout = [[column1, column2, column3, column4]]
-        self.mem= generador_memes.GeneradorMemes()
-        self.config=configuracion.Configuracion()
+
+
         self.window = sg.Window("UNLP Image", layout, background_color='white', size=(800,600))
     def iniciar_ventana(self):
         ok=False
@@ -58,9 +59,17 @@ class VentanaMenu:
                 ok = True
                 break
             elif event == 'config':
-                self.config.abrir_configuracion()
+                self.window.close()
+                self.config=configuracion.Configuracion()
+                self.config.abrir_configuracion(self.perf)
             elif event == 'meme':
-                self.mem.abrir_ventana()
+                self.window.close()
+                self.mem= generador_memes.GeneradorMemes()
+                self.mem.abrir_ventana(self.perf)
+            else:
+                self.window.close()
+                self.edit=editar_perfil.EditarPerfil(self.perf)
+                self.edit.iniciar_ventana(self.perf)
         self.window.close()
 
         if (ok == True):
