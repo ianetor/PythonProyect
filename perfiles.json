@@ -1,0 +1,40 @@
+{
+    "perfiles": [
+        {
+            "nombre": "Ana",
+            "edad": 25,
+            "imagen": "icons/princesa.png",
+            "intereses": ["programación", "deporte", "música"]
+        },
+        {
+            "nombre": "Juan",
+            "edad": 30,
+            "imagen": "icons/jake.png",
+            "intereses": ["lectura", "viajes", "gastronomía"]
+        },
+        {
+            "nombre": "Maria",
+            "edad": 27,
+            "imagen": "icons/bill.png",
+            "intereses": ["arte", "moda", "tecnología"]
+        },
+        {
+            "nombre": "Ramiro",
+            "edad": 30,
+            "imagen": "icons/genio.png",
+            "intereses": ["lectura", "viajes", "gastronomía"]
+        },
+        {
+            "nombre": "Julian",
+            "edad": 30,
+            "imagen": "icons/morty.png",
+            "intereses": ["lectura", "viajes", "gastronomía"]
+        },
+        {
+            "nombre": "Facundo",
+            "edad": 30,
+            "imagen": "icons/princesa.png",
+            "intereses": ["lectura", "viajes", "gastronomía"]
+        }
+    ]
+}
