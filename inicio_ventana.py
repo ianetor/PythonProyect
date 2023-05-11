@@ -7,8 +7,8 @@ class VentanaPrincipal:
     def __init__(self, indice_perfiles=0):
         current_dir = os.path.abspath(__file__)
 
-        relative_path = "icons\\icon_add.png"
-        relative_path_2 = "icons\\ver_mas.png"
+        relative_path = "icons/icon_add.png"
+        relative_path_2 = "icons/ver_mas.png"
 
         icon_add = os.path.join('./', relative_path)
         ver_mas = os.path.join('./', relative_path_2)
@@ -52,17 +52,12 @@ class VentanaPrincipal:
             if event == sg.WIN_CLOSED:
                 break
             elif event == 'otros':
-                otros = True
-                break
+                self.window.close()
+                self.__init__(cant)
+                self.iniciar_ventana(cant+2)
             else:
-                menu_check = True
-                perfil_act = event
-                break
+                self.window.close()
+                menu = menu_principal_ventana.VentanaMenu(event)
+                menu.iniciar_ventana()
         self.window.close()
-
-        if (menu_check == True):
-            menu = menu_principal_ventana.VentanaMenu(perfil_act)
-            menu.iniciar_ventana()
-        elif (otros == True):
-            self.__init__(cant)
-            self.iniciar_ventana(cant+2)
+            
