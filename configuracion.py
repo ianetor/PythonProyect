@@ -27,7 +27,7 @@ class Configuracion:
         columnas= [create_folder_input(textos[i]) for i in range(3)]
         columna_vacia= sg.Column([],size=(450,120),background_color='white')
 
-        boton_volver= [sg.Button(enable_events=True,image_subsample=(4),button_color='white',border_width=0,image_size=(50,50),image_filename=boton_volver,key='VOLVER')]
+        boton_volver= [sg.Button(enable_events=True,image_subsample=(10),button_color='white',border_width=0,image_size=(50,50),image_filename=boton_volver,key='VOLVER')]
         boton_guardar= [sg.Button(image_filename=boton_guardar,image_size=(50,50),button_color='white',enable_events=True,border_width=0,image_subsample=(9),key='GUARDAR')]
 
         elem_col3=[boton_volver,espacio1,boton_guardar]
@@ -40,7 +40,7 @@ class Configuracion:
 
         self.window = sg.Window('UNLPImage',background_color='white' ,element_padding=(0,3),size=(800,600),layout=layout1)
     
-    def abrir_configuracion(self):
+    def abrir_configuracion(self,perfil_act):
         datos=dict()
         while True:
             event, values = self.window.read()
@@ -65,6 +65,6 @@ class Configuracion:
 
             elif event == 'VOLVER':
                 self.window.close()
-                menu_ventana = menu_principal_ventana.VentanaMenu()
+                menu_ventana = menu_principal_ventana.VentanaMenu(perfil_act)
                 menu_ventana.iniciar_ventana()
         self.window.close()
