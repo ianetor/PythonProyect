@@ -1,0 +1,1 @@
+ventana_principal.iniciar_ventana()
