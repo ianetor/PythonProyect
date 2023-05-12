@@ -1,0 +1,23 @@
+[
+    {
+        "nombre": "Maria",
+        "nick": "maria",
+        "edad": "34",
+        "genero": "Femenino",
+        "imagen": "icons/bill.png"
+    },
+    {
+        "nombre": "Juan",
+        "nick": "juan",
+        "edad": "12",
+        "genero": "Masculino",
+        "imagen": "icons/jake.png"
+    },
+    {
+        "nombre": "Ana",
+        "nick": "Ana",
+        "edad": "60",
+        "genero": "Femenino",
+        "imagen": "icons/jake.png"
+    }
+]
