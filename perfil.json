@@ -1,0 +1,16 @@
+[
+    {
+        "nombre": "Maria",
+        "nick": "maria",
+        "edad": "39",
+        "genero": "Femenino",
+        "imagen": "icons/bmo.png"
+    },
+    {
+        "nombre": "Ianela",
+        "nick": "iane",
+        "edad": "20",
+        "genero": "Femenino",
+        "imagen": "icons/chebu.png"
+    }
+]
